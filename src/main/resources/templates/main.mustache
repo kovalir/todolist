@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+<h2>Todo list</h2>
+<div>
+    <form method="post" action="/add">
+        <input type="text" name="task" placeholder="Enter task" />
+        <button type="submit">Add</button>
+    </form>
+</div>
+{{#items}}
+    <div>
+        <div style="display: inline-block">
+            <form method="post" action="/delete">
+                <b>{{id}}</b>
+                {{task}}
+                <input type="text" name="id" value="{{id}}" style="display: none">
+                <button type="submit">Done</button>
+            </form>
+        </div>
+    </div>
+{{/items}}
+</body>
+</html>
